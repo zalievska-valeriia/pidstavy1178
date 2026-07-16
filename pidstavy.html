@@ -34,6 +34,13 @@
     padding: 24px;
     border: 0.5px solid var(--border);
   }
+  @media (max-width: 600px) {
+    body { padding: 12px; }
+    .wrap { padding: 16px; border-radius: 12px; }
+    h2 { font-size: 16px; }
+    .grp-btn { font-size: 12.5px; padding: 6px 10px; }
+    .card-head { padding: 0.65rem 0.75rem; }
+  }
   h2 {
     font-size: 18px;
     font-weight: 500;
@@ -56,11 +63,11 @@
   .grp-btn:hover { background: var(--surface-1); }
   #search {
     width: 100%;
-    height: 36px;
+    height: 40px;
     padding-left: 32px;
     border-radius: var(--radius);
     border: 0.5px solid var(--border);
-    font-size: 14px;
+    font-size: 16px;
     font-family: inherit;
     background: var(--surface-2);
     color: var(--text-primary);
