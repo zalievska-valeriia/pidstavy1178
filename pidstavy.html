@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Винятки з конкурентних процедур для надпорогових закупівель після останніх змін до Постанови №1178</title>
+<title>Винятки з Особливостей після останніх змін в 1178</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.44.0/iconfont/tabler-icons.min.css">
 <style>
   :root {
@@ -94,7 +94,7 @@
 <body>
 
 <div class="wrap">
-<h2>Винятки з конкурентних процедур для надпорогових закупівель після останніх змін до Постанови №1178</h2>
+<h2>Винятки з Особливостей після останніх змін в 1178</h2>
 
 <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px;">
   <button class="grp-btn" data-grp="all">Усі</button>
@@ -198,6 +198,22 @@ document.querySelectorAll('.grp-btn').forEach(btn => {
 setActiveButton(document.querySelector('.grp-btn[data-grp="all"]'));
 searchEl.addEventListener('input', render);
 render();
+
+// Auto-resize: notify parent page of content height so an embedding iframe
+// can be sized dynamically instead of using a fixed height.
+function postHeight(){
+  const height = document.body.scrollHeight;
+  window.parent.postMessage({ type: "pidstavy1178-resize", height: height }, "*");
+}
+window.addEventListener('load', postHeight);
+window.addEventListener('resize', postHeight);
+if (window.ResizeObserver) {
+  new ResizeObserver(postHeight).observe(document.querySelector('.wrap'));
+} else {
+  // fallback for older browsers without ResizeObserver
+  setInterval(postHeight, 500);
+}
+postHeight();
 </script>
 
 </body>
